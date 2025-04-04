@@ -3,6 +3,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const userRoutes = require("./routes/userRoute");
+const interviewRoutes = require("./routes/interviewRoutes");
 const verifyRoutes = require("./routes/verify");
 const forgetPassRoute = require('./routes/forgetPassRoute')
 const cookieParser = require("cookie-parser");
@@ -35,6 +36,7 @@ app.use((req, res, next) => {
 app.use("/api/reset", forgetPassRoute);
 app.use("/api/user", userRoutes);
 app.use("/api/verify", verifyRoutes);
+app.use("/api/interview", interviewRoutes);
 
 
 app.get("/", (req, res) => {
