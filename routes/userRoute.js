@@ -4,6 +4,7 @@ const {
   loginUser,
   signupUser,
   logout,
+  updateProfile,
   checkAuth,
 } = require("../controllers/userController");
 const {requireAuth} = require("../middleware/auth.middleware");
@@ -17,6 +18,8 @@ router.post("/signup", signupUser);
 //logout
 router.post("/logout", logout);
 
+
+router.put("/update-profile", requireAuth, updateProfile);
 //checkAuth
 router.get("/check", requireAuth, checkAuth);
 
