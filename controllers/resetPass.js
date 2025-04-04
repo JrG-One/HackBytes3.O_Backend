@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer');
-const generateOTP = require('../utils/generateOTP');
+const generateOTP = require('../utils/generateOtp');
 const {sendOTPEmail} = require('../utils/sendEmail');
 const User = require("../models/userModel");
 const { otpCache} = require("../cache/mailcache");
@@ -30,7 +30,7 @@ const sendOtp= async(req,res )=> {
   
 };
 
-const verifyOtp = async (req,res)=>{
+const varifyOtp = async (req,res)=>{
   const {email,otp}=req.body
   
   try {
@@ -38,13 +38,12 @@ const verifyOtp = async (req,res)=>{
     if(!user) {
       return res.status(404).json({error:"OTP expired"});
     }
+    console.log(user.otp)
+
     if(user.otp===otp){
-      return res.status(200).json({message:"OTP verification successful"});
+      return res.status(200).json({message:"OTP varification successful"});
     }
-    else {
-      console.log("error")
-      return res.status(400).json({error:"Entre valid OTP"})
-    }
+    else return res.status(400).json({error:"Entre valid OTP"})
   } catch (err) {
     return res.status(400).json({error:err.message});
   }
@@ -63,4 +62,4 @@ const resetPassword = async(req,res) => {
   
 }
 
-module.exports = {sendOtp,verifyOtp,resetPassword};
+module.exports = {sendOtp,varifyOtp,resetPassword};

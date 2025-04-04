@@ -20,6 +20,7 @@ const loginUser = async (req, res) => {
       fullName: user.fullName,
       email: user.email,
       profilePic: user.profilePic,
+      
     });
   } catch (error) {
     res.status(400).json({ error: error.message });
