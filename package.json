@@ -1,0 +1,19 @@
+{
+  "name": "hackbytes3.o_backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JrG-One/HackBytes3.O_Backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JrG-One/HackBytes3.O_Backend/issues"
+  },
+  "homepage": "https://github.com/JrG-One/HackBytes3.O_Backend#readme",
+  "description": ""
+}
