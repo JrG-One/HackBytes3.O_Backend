@@ -15,5 +15,9 @@
     "url": "https://github.com/JrG-One/HackBytes3.O_Backend/issues"
   },
   "homepage": "https://github.com/JrG-One/HackBytes3.O_Backend#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0"
+  }
 }
