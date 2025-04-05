@@ -67,7 +67,7 @@ exports.generateAnalysis = async (req, res) => {
     console.log("Extracted Score:", overallScore);
 
     // Generate the PDF
-    const pdfPath = await generatePDFReport(markdown, overallScore);
+    const pdfPath = await generatePDFReport(markdown, overallScore, formData);
 
 
     // Upload PDF to Cloudinary
