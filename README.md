@@ -8,41 +8,47 @@ The platform simulates real-world interview scenarios and provides personalized 
 
 ```
 HackBytes3.0_Backend/
+├── .github/              # GitHub related files
 ├── cache/
-│   └── mailcache.js        # Email caching implementation
+│   └── mailcache.js      # Email caching implementation
 ├── controllers/
 │   ├── interviewController.js  # Interview management logic
 │   ├── mailController.js       # Email functionality controller
 │   ├── resetPass.js            # Password reset functionality
-│   ├── resourceController.js    # Resource management
+│   ├── resourceController.js   # Resource management
+│   ├── resumeController.js     # Resume handling functionality
 │   └── userController.js       # User management operations
 ├── db/
-│   └── connect.js          # Database connection configuration
+│   └── connect.js        # Database connection configuration
 ├── lib/
-│   └── cloudinary.js       # Cloudinary integration for media storage
+│   └── cloudinary.js     # Cloudinary integration for media storage
 ├── middleware/
-│   └── auth.middleware.js  # Authentication middleware
+│   └── auth.middleware.js # Authentication middleware
 ├── models/
-│   ├── interview.js        # Interview data schema
-│   ├── resources.js        # Resources data schema
-│   └── userModel.js        # User data schema
-├── node_modules/           # Project dependencies
+│   ├── interview.js      # Interview data schema
+│   ├── resources.js      # Resources data schema
+│   └── userModel.js      # User data schema
+├── node_modules/         # Project dependencies
 ├── routes/
-│   ├── forgetPassRoute.js  # Password recovery routes
-│   ├── interviewRoutes.js  # Interview management endpoints
-│   ├── resourceRoutes.js   # Resource access endpoints
-│   ├── userRoute.js        # User management endpoints
-│   └── verify.js           # Verification routes
+│   ├── forgetPassRoute.js # Password recovery routes
+│   ├── interviewRoutes.js # Interview management endpoints
+│   ├── resourceRoutes.js  # Resource access endpoints
+│   ├── resumeRoutes.js    # Resume management endpoints
+│   ├── userRoute.js       # User management endpoints
+│   └── verify.js          # Verification routes
 ├── utils/
-│   ├── generateOtp.js      # OTP generation utilities
-│   ├── generateToken.js    # JWT token generation
-│   ├── openaiClient.js     # OpenAI integration
-│   ├── randString.js       # Random string generation
-│   └── sendEmail.js        # Email sending functionality
-├── .env                    # Environment variables
-├── .gitignore              # Git ignore configuration
-├── package-lock.json       # Dependency lock file
-└── package.json            # Project metadata and dependencies
+│   ├── cleanMarkdown.js   # Markdown cleaning utility
+│   ├── generateOtp.js     # OTP generation utilities
+│   ├── generateToken.js   # JWT token generation
+│   ├── openaiClient.js    # OpenAI integration
+│   ├── randString.js      # Random string generation
+│   └── sendEmail.js       # Email sending functionality
+├── .env                  # Environment variables
+├── .gitignore            # Git ignore configuration
+├── package-lock.json     # Dependency lock file
+├── package.json          # Project metadata and dependencies
+├── README.md             # Project documentation
+└── server.js             # Main application entry point
 ```
 
 ## Features
@@ -52,9 +58,11 @@ HackBytes3.0_Backend/
 - **Password Recovery**: OTP-based password reset functionality
 - **Interview Management**: Schedule and manage interviews
 - **Resource Management**: Create, update, and retrieve resources
+- **Resume Management**: Upload, process, and store user resumes
 - **Email Notifications**: Automated email notifications and templates
 - **OpenAI Integration**: AI-powered features using OpenAI's API
 - **Cloudinary Integration**: Media file storage and management
+- **Markdown Processing**: Utilities for cleaning and processing markdown content
 
 ## Technologies
 
@@ -95,7 +103,7 @@ cp .env.example .env
 
 4. Start the server
 ```bash
-npm start
+node server.js
 ```
 
 ## API Endpoints
@@ -103,12 +111,12 @@ npm start
 - **User Routes**: Registration, login, profile management
 - **Resource Routes**: CRUD operations for resources
 - **Interview Routes**: Interview scheduling and management
+- **Resume Routes**: Resume upload and management functionality
 - **Password Reset**: Password recovery functionality
-
 
 ## Contributors
 
-# Team HackOps
+### Team HackOps
 - Adarsh Singh
 - Samarth Gangrade
 - Ojaswa Varshney
