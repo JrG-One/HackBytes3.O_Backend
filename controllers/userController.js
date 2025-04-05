@@ -3,6 +3,7 @@ const randString = require("../utils/randString");
 const {sendMail} = require("../utils/sendEmail");
 const { generateToken } = require("../utils/generateToken");
 const { mailCache} = require("../cache/mailcache");
+const cloudinary = require("../lib/cloudinary");
 
 //login user
 const loginUser = async (req, res) => {
