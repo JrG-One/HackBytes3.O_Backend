@@ -1,0 +1,49 @@
+name: Deploy backend Application
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build Docker Image
+        run: docker build -t adarsh11011/mockxpert-backend-app:latest .
+
+      - name: Publish Image to Docker Hub
+        run: docker push adarsh11011/mockxpert-backend-app:latest
+
+  deploy:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Pull Image from Docker Hub
+        run: docker pull adarsh11011/mockxpert-backend-app:latest
+
+      - name: Delete Old Container
+        run: docker rm -f mockXpert-backend || true
+
+      - name: Run Docker Container with Env Variables
+        run: |
+          docker run -d -p 5001:5001 \
+            --name mockXpert-backend \
+            -e PORT='${{ secrets.PORT }}' \
+            -e MONGO_URL='${{ secrets.MONGO_URI }}' \
+            -e JWT_SECRET='${{ secrets.JWT_SECRET }}' \
+            -e EMAIL_SERVICE='${{ secrets.EMAIL_SERVICE }}' \
+            -e EMAIL_USER='${{ secrets.EMAIL_USER }}' \
+            -e EMAIL_PASS='${{ secrets.EMAIL_PASS }}' \
+            -e CLOUDINARY_CLOUD_NAME='${{ secrets.CLOUDINARY_CLOUD_NAME }}' \
+            -e CLOUDINARY_API_KEY='${{ secrets.CLOUDINARY_API_KEY }}' \
+            -e CLOUDINARY_API_SECRET='${{ secrets.CLOUDINARY_API_SECRET }}' \
+            -e OPENAI_API_KEY='${{ secrets.OPENAI_API_KEY }}' \
+            -e OPENAI_API_URL='${{ secrets.OPENAI_API_URL }}' \
+            adarsh11011/mockxpert-backend-app:latest
