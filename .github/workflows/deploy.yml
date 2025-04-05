@@ -21,7 +21,7 @@ jobs:
       - name: Publish Image to Docker Hub
         run: docker push adarsh11011/mockxpert-backend-app:latest
 
-  deploy:
+  deploy: 
     needs: build
     runs-on: self-hosted
     steps:
