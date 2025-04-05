@@ -7,6 +7,7 @@ const interviewRoutes = require("./routes/interviewRoutes");
 const verifyRoutes = require("./routes/verify");
 const resourceRoutes = require("./routes/resourceRoutes")
 const forgetPassRoute = require('./routes/forgetPassRoute')
+const resumeRoutes = require('./routes/resumeRoutes');
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const { connect } = require("./db/connect");
@@ -39,6 +40,7 @@ app.use("/api/user", userRoutes);
 app.use("/api/verify", verifyRoutes);
 app.use("/api/interview", interviewRoutes);
 app.use("/api/resources", resourceRoutes);
+app.use("/api/resume", resumeRoutes);
 
 
 app.get("/", (req, res) => {
