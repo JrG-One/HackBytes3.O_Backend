@@ -7,6 +7,8 @@ const interviewRoutes = require("./routes/interviewRoutes");
 const verifyRoutes = require("./routes/verify");
 const resourceRoutes = require("./routes/resourceRoutes")
 const forgetPassRoute = require('./routes/forgetPassRoute')
+const portalRoute = require('./routes/portalRoutes');
+const chatRoutes = require ('./routes/chatRoutes')
 const resumeRoutes = require('./routes/resumeRoutes');
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -42,6 +44,8 @@ app.use("/api/verify", verifyRoutes);
 app.use("/api/interview", interviewRoutes);
 app.use("/api/resources", resourceRoutes);
 app.use("/api/resume", resumeRoutes);
+app.use("/api/portal", portalRoute);
+app.use("/api", chatRoutes);
 
 
 app.get("/", (req, res) => {
