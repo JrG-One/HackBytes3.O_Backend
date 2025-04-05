@@ -27,7 +27,7 @@ const userSchema = new Schema({
     default : false,
   },
   resumeUrl: {
-    type: String, // Store the path to the resume file
+    type: String, 
     default: null
   }
 });
