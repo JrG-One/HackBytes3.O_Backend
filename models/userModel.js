@@ -29,6 +29,10 @@ const userSchema = new Schema({
   resumeUrl: {
     type: String, 
     default: null
+  },
+  atsScore:{
+    type:Number,
+    default:0
   }
 });
 
