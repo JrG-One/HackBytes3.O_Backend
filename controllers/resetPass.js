@@ -30,7 +30,7 @@ const sendOtp= async(req,res )=> {
   
 };
 
-const varifyOtp = async (req,res)=>{
+const verifyOtp = async (req,res)=>{
   const {email,otp}=req.body
   
   try {
@@ -62,4 +62,4 @@ const resetPassword = async(req,res) => {
   
 }
 
-module.exports = {sendOtp,varifyOtp,resetPassword};
+module.exports = {sendOtp,verifyOtp,resetPassword};

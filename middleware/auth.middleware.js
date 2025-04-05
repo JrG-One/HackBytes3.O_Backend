@@ -30,6 +30,11 @@ const requireAuth = async (req, res, next) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
+const isAdmin = (req, res, next) => {
+  if (!req.user || !req.user.isAdmin) {
+    return res.status(403).json({ message: "Forbidden - Admins only" });
+  }
+  next();
+};
 
-
-module.exports = { requireAuth };
+module.exports = { requireAuth , isAdmin};
