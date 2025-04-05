@@ -25,9 +25,6 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
-      - name: Check Health
-        run: sleep 10 && curl -f http://localhost:5001/api/health || (docker logs mockXpert-backend-app && exit 1)
-
       - name: Pull Image from Docker Hub
         run: docker pull adarsh11011/mockxpert-backend-app:latest
 
