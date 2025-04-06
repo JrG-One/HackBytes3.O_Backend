@@ -36,7 +36,7 @@ jobs:
           docker run -d -p 5001:5001 \
             --name mockXpert-backend \
             -e PORT='${{ secrets.PORT }}' \
-            -e MONGO_URL='${{ secrets.MONGO_URI }}' \
+            -e MONGO_URI='${{ secrets.MONGO_URI }}' \
             -e JWT_SECRET='${{ secrets.JWT_SECRET }}' \
             -e EMAIL_SERVICE='${{ secrets.EMAIL_SERVICE }}' \
             -e EMAIL_USER='${{ secrets.EMAIL_USER }}' \
