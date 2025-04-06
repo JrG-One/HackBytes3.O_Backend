@@ -50,6 +50,8 @@ HackBytes3.0_Backend/
 ├── README.md             # Project documentation
 └── server.js             # Main application entry point
 ```
+## Backend Flow
+![Image](https://github.com/user-attachments/assets/6efc465f-a6bd-4fa7-a200-f4e8ca873eb0)
 
 ## Features
 
