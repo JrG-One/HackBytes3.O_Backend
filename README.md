@@ -1,4 +1,4 @@
-# MockXpert Backend
+# HackByte 3.0 Backend
 
 MockXpert is an AI-powered platform designed to revolutionize interview preparation. Built during HackBytes 3.0, MockXpert offers a smart, intuitive, and interactive space where users can practice technical and behavioral interviews, analyze their resumes, and receive instant feedback — all powered by advanced AI.
 
@@ -8,10 +8,14 @@ The platform simulates real-world interview scenarios and provides personalized 
 
 ```
 HackBytes3.0_Backend/
-├── .github/              # GitHub related files
+├── .github/
+│   └── workflows/
+│       └── deploy.yml    # Deployment automation workflow
 ├── cache/
 │   └── mailcache.js      # Email caching implementation
 ├── controllers/
+│   ├── analysisController.js   # Data analysis functionality
+│   ├── chatController.js       # Chat functionality handler
 │   ├── interviewController.js  # Interview management logic
 │   ├── mailController.js       # Email functionality controller
 │   ├── resetPass.js            # Password reset functionality
@@ -30,8 +34,10 @@ HackBytes3.0_Backend/
 │   └── userModel.js      # User data schema
 ├── node_modules/         # Project dependencies
 ├── routes/
+│   ├── chatRoutes.js     # Chat functionality endpoints
 │   ├── forgetPassRoute.js # Password recovery routes
 │   ├── interviewRoutes.js # Interview management endpoints
+│   ├── portalRoutes.js    # Portal access endpoints
 │   ├── resourceRoutes.js  # Resource access endpoints
 │   ├── resumeRoutes.js    # Resume management endpoints
 │   ├── userRoute.js       # User management endpoints
@@ -41,13 +47,13 @@ HackBytes3.0_Backend/
 │   ├── generateOtp.js     # OTP generation utilities
 │   ├── generateToken.js   # JWT token generation
 │   ├── openaiClient.js    # OpenAI integration
+│   ├── pdfGenerator.js    # PDF document generation utility
 │   ├── randString.js      # Random string generation
 │   └── sendEmail.js       # Email sending functionality
 ├── .env                  # Environment variables
 ├── .gitignore            # Git ignore configuration
 ├── package-lock.json     # Dependency lock file
 ├── package.json          # Project metadata and dependencies
-├── README.md             # Project documentation
 └── server.js             # Main application entry point
 ```
 
@@ -59,6 +65,10 @@ HackBytes3.0_Backend/
 - **Interview Management**: Schedule and manage interviews
 - **Resource Management**: Create, update, and retrieve resources
 - **Resume Management**: Upload, process, and store user resumes
+- **Chat Functionality**: Real-time communication capabilities
+- **Portal System**: Specialized access portal for different user types
+- **Data Analysis**: Advanced data processing and analysis
+- **PDF Generation**: Dynamic PDF document creation
 - **Email Notifications**: Automated email notifications and templates
 - **OpenAI Integration**: AI-powered features using OpenAI's API
 - **Cloudinary Integration**: Media file storage and management
@@ -72,6 +82,7 @@ HackBytes3.0_Backend/
 - **JWT**: JSON Web Tokens for authentication
 - **OpenAI API**: AI functionality integration
 - **Cloudinary**: Cloud-based media management
+- **GitHub Actions**: CI/CD workflow automation
 
 ## Getting Started
 
@@ -112,7 +123,13 @@ node server.js
 - **Resource Routes**: CRUD operations for resources
 - **Interview Routes**: Interview scheduling and management
 - **Resume Routes**: Resume upload and management functionality
+- **Chat Routes**: Real-time communication endpoints
+- **Portal Routes**: Specialized access points for different user types
 - **Password Reset**: Password recovery functionality
+
+## License
+
+[MIT License](LICENSE)
 
 ## Contributors
 
@@ -124,4 +141,4 @@ node server.js
 
 ---
 
-© 2025 HackOps. All Rights Reserved.
+© 2025 HackByte. All Rights Reserved.
