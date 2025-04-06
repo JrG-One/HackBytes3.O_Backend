@@ -127,9 +127,6 @@ node server.js
 - **Portal Routes**: Specialized access points for different user types
 - **Password Reset**: Password recovery functionality
 
-## License
-
-[MIT License](LICENSE)
 
 ## Contributors
 
